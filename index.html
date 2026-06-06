@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 42</title>
+
+    <title>Sentiment Analysis Dashboard</title>
+
     <link rel="stylesheet" href="styles.css">
+
     <style>
         /* Animation Keyframes */
         @keyframes fadeIn {
@@ -94,76 +97,105 @@
         }
     </style>
 </head>
+
 <body>
+
     <!-- Project Title Section -->
     <div class="title-section">
-        <h1 id="main-title" class="animated-title">Project 42</h1>
-        <h2 id="project-name" class="project-name hidden">Sentiment Analysis Dashboard</h2>
+        <h1 id="main-title" class="animated-title">
+            Sentiment Analysis Dashboard
+        </h1>
+
+        <h2 id="project-name" class="project-name hidden">
+            NLP-Powered Social Media Analytics
+        </h2>
     </div>
 
     <!-- Main Content Wrapper -->
     <div id="main-content" class="main-content hidden">
+
         <!-- Selection Section -->
         <div class="selection-section">
+
             <div class="option" onclick="selectOption('twitter')">
                 <img src="twitter-icon.png" alt="Twitter">
-                <p>Twitter</p>
+                <p>Twitter Analysis</p>
             </div>
+
             <div class="option" onclick="selectOption('instagram')">
                 <img src="instagram-icon.png" alt="Instagram">
-                <p>Instagram</p>
+                <p>Instagram Analysis</p>
             </div>
+
             <div class="option" onclick="selectOption('custom_text')">
                 <img src="text-icon.png" alt="Custom Text">
-                <p>Custom Text</p>
+                <p>Custom Text Analysis</p>
             </div>
+
         </div>
 
         <!-- Input Section -->
         <div id="input-section" class="input-section">
-            <!-- Inputs will be shown here based on the selection -->
+            <!-- Dynamic Inputs -->
         </div>
 
         <!-- Loading Indicator -->
-        <div id="loading-indicator">Loading...</div>
+        <div id="loading-indicator">
+            Analyzing sentiment...
+        </div>
 
         <!-- Analyze Button -->
-        <button id="analyze-button" onclick="analyzeSentiment()">Analyze</button>
+        <button id="analyze-button" onclick="analyzeSentiment()">
+            Analyze Sentiment
+        </button>
 
         <!-- Output Section -->
         <div id="output-section" class="hidden">
+
             <h3>Analysis Results</h3>
+
             <div id="error-message" style="color: red;"></div>
+
             <div id="analysis-summary"></div>
+
             <canvas id="sentiment-chart"></canvas>
+
             <div id="sentiment-details"></div>
+
         </div>
+
     </div>
 
+    <!-- Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom JS -->
     <script src="script.js"></script>
+
     <script>
-        // Animation sequence for displaying titles and content
         window.onload = function() {
+
             const mainTitle = document.getElementById('main-title');
             const projectName = document.getElementById('project-name');
             const mainContent = document.getElementById('main-content');
 
-            // Step 1: Animate "Project 42" with a fade-in effect
+            // Step 1: Animate dashboard title
             mainTitle.classList.add('fade-in');
 
-            // Step 2: Show project name after "Project 42" animation ends
+            // Step 2: Show subtitle
             setTimeout(() => {
                 projectName.classList.remove('hidden');
                 projectName.classList.add('fade-in');
             }, 2000);
 
-            // Step 3: Show main content after project name animation ends
+            // Step 3: Show dashboard content
             setTimeout(() => {
                 mainContent.classList.remove('hidden');
                 mainContent.classList.add('fade-in');
             }, 4000);
         };
     </script>
+
 </body>
 </html>
+```
